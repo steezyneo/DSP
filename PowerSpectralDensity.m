@@ -1,0 +1,10 @@
+clc;
+clear all;
+close all;
+Fs = 1000;
+n = 0:1/Fs:0.3;
+x = cos(2*pi*200*n);
+periodogram(x);
+xlabel('frequency');
+ylabel('power');
+title('Plot of power spectral density');

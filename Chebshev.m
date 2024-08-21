@@ -1,0 +1,16 @@
+clc;
+close all;
+rp = input('enter the passband ripple:');
+rs = input('enter the stopband');
+fp = input('enter the passband edgefreq');
+fs = input('enter the stopband edgefreq');
+f = input('enter the sampling frequency');
+wp = 2*fp/f;
+ws = 2*fs/f;
+[n, wn] = cheb1ord(wp,ws,rp,rs);
+display(n);
+display(wn);
+[b,a] = cheby1(n,rp,wn);
+freqz(b,a);
+display(b);
+display(a);
